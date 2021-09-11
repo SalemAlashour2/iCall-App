@@ -36,8 +36,8 @@ public class TodoCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
-        TextView contactsName = (TextView) view.findViewById(R.id.contactName);
-        TextView contactsNumber = (TextView) view.findViewById(R.id.contactNumber);
+        TextView contactsName =  view.findViewById(R.id.contactName);
+        TextView contactsNumber =  view.findViewById(R.id.contactNumber);
         // Extract properties from cursor
          name = cursor.getString(cursor.getColumnIndexOrThrow("display_name"));
          number = cursor.getString(cursor.getColumnIndexOrThrow("data1"));

@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,17 +32,14 @@ public class ContactActivity extends AppCompatActivity implements LoaderManager.
 
         LoaderManager.getInstance(this).initLoader(1, null, this);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
 
-               TextView number = view.findViewById(R.id.contactNumber);
-                TextView name = view.findViewById(R.id.contactName);
-               setName((String) name.getText());
-               setNumber((String) number.getText());
-                Intent intent = new Intent(ContactActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
+           TextView number = view.findViewById(R.id.contactNumber);
+            TextView name = view.findViewById(R.id.contactName);
+           setName((String) name.getText());
+           setNumber((String) number.getText());
+            Intent intent = new Intent(ContactActivity.this,MainActivity.class);
+            startActivity(intent);
         });
 
     }

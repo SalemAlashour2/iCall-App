@@ -2,24 +2,20 @@ package com.example.icall;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.lifecycle.Observer;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import java.net.Inet4Address;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageButton call,contacts;
     TextView name;
     CallNumberViewModel callNumberViewModel = CallNumberViewModel.getINSTANCE();
-    String callnumber;
+    String callNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +28,12 @@ public class MainActivity extends AppCompatActivity {
         call = findViewById(R.id.callButton);
 
         observe();
-        contacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              openNewActivity();
-            }
-        });
+        contacts.setOnClickListener(v -> openNewActivity());
 
-        call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_CALL);
-                i.setData(Uri.parse("tel:"+callnumber));
-                startActivity(i);
-            }
+        call.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_CALL);
+            i.setData(Uri.parse("tel:"+ callNumber));
+            startActivity(i);
         });
     }
         public void openNewActivity(){
@@ -54,18 +42,8 @@ public class MainActivity extends AppCompatActivity {
         }
     public void observe()
     {
-        callNumberViewModel.namemutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                name.setText(s);
-            }
-        });
-        callNumberViewModel.numberMutableLiveData.observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-              callnumber = s;
-            }
-        });
+        callNumberViewModel.namemutableLiveData.observe(this, s -> name.setText(s));
+        callNumberViewModel.numberMutableLiveData.observe(this, s -> callNumber = s);
     }
 
 }
