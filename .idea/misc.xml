@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/drawable/circle.xml" value="0.2638888888888889" />
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/drawable/contacts.xml" value="0.2611111111111111" />
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/drawable/movingcircle.xml" value="0.22592592592592592" />
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/layout/contacts.xml" value="0.192481884057971" />
+        <entry key="..\:/Android Projects/iCall/app/src/main/res/layout/my_row.xml" value="0.31896551724137934" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

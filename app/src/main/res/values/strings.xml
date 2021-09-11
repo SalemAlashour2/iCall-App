@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">iCall</string>
+    <string name="call_button" />
+    <string name="contacts_button" />
+    <string name="contacts">Contacts</string>
+    <string name="circle_animation"/>
+</resources>
